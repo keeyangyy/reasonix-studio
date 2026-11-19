@@ -2,8 +2,9 @@
   <img src="docs/logo-ghost-wave-effect.svg" alt="Reasonix" width="360"/>
 </p>
 
-> [!WARNING]
-> **Reasonix is no longer maintained as of 2026-11-12.** The final release is v2.61.0; there will be no further releases, fixes or issue triage. The project is MIT-licensed and forks are welcome. See the [announcement](https://github.com/esengine/DeepSeek-Reasonix/issues/15109).
+> **This repository continues Reasonix 2.x from upstream v2.61.0.** Upstream was archived on 2026-11-12; this line keeps the Electron desktop and the existing feature set, and continues development with the upstream version sequence. It is not an official release.
+
+> Reasonix has two independent lines derived from upstream: this repository (Studio, 2.x continuation, Electron, full-featured) · [Reasonix Wails](https://github.com/keeyangyy/reasonix-wails) (1.x derivative, portable single exe and installer).
 
 <p align="center">
   <strong>English</strong>
