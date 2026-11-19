@@ -2,8 +2,9 @@
   <img src="docs/logo-ghost-wave-effect.svg" alt="Reasonix" width="360"/>
 </p>
 
-> [!WARNING]
-> **Reasonix 已于 2026-11-12 起停止维护。** 最后一个版本为 v2.61.0，此后不再发布新版本、修复缺陷或处理 Issue。项目采用 MIT 协议，欢迎 fork。详见[公告](https://github.com/esengine/DeepSeek-Reasonix/issues/15109)。
+> **本仓库是 Reasonix 2.x 的接续线。** 以上游最终版 v2.61.0 为基线继续独立开发：保留 Electron 桌面与既有功能，版本号沿用上游序列。上游已于 2026-11-12 归档；本仓库不是官方发行版。
+
+> Reasonix 有两条基于上游衍生的独立接续线：本仓库（Studio，2.x 接续，Electron，功能全面） · [Reasonix Wails](https://github.com/keeyangyy/reasonix-wails)（1.x 衍生，便携单 exe 与安装版）。
 
 <p align="center">
   <a href="./README.md">English</a>
