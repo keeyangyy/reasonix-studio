@@ -164,20 +164,6 @@ jobs:
             goarch: arm64
             unpacked: win-arm64-unpacked
             artifact: studio-build-windows-arm64
-          - platform: darwin/amd64
-            runner: macos-latest
-            ebarch: x64
-            artifact: studio-build-darwin-amd64
-          - platform: darwin/arm64
-            runner: macos-latest
-            ebarch: arm64
-            artifact: studio-build-darwin-arm64
-          - platform: linux/amd64
-            runner: ubuntu-22.04
-            artifact: studio-build-linux-amd64
-          - platform: linux/arm64
-            runner: ubuntu-22.04-arm
-            artifact: studio-build-linux-arm64
     steps:
       # Real-time scanning inspects every file the job writes, and packaging
       # writes a quarter of a gigabyte twice. The runner is thrown away after
