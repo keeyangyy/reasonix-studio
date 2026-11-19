@@ -7,9 +7,9 @@ name: Studio
 # and the packaging contract on real artifacts.
 on:
   push:
-    branches: [studio]
+    branches: [main]
   pull_request:
-    branches: [studio]
+    branches: [main]
 
 permissions:
   contents: read

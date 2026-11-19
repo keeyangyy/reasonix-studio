@@ -6,9 +6,9 @@ name: CI
 # there and is covered by studio.yml.
 on:
   push:
-    branches: [main-v2, studio]
+    branches: [main]
   pull_request:
-    branches: [main-v2, studio]
+    branches: [main]
 
 permissions:
   contents: read
