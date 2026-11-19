@@ -43,7 +43,7 @@
 <p align="center"><strong>Open source · MIT · runs on your computer, model of your choice</strong></p>
 <h3 align="center">An open-source coding agent for your terminal, desktop, browser and editor.</h3>
 <p align="center">It reads your project, edits files and runs commands and tests. Have it ask before each step, or work on its own within limits you set. Files its edit tools changed can be rewound. New here? Start with the Studio desktop app.</p>
-<p align="center">Maintained by <strong>Huahui Yu</strong>.</p>
+<p align="center">Upstream created and maintained by <strong>Huahui Yu</strong>; this continuation line is maintained by <strong>keeyangyy</strong>.</p>
 
 <br/>
 
