@@ -2,24 +2,24 @@
   <img src="docs/logo-ghost-wave-effect.svg" alt="Reasonix" width="360"/>
 </p>
 
-> **This repository continues Reasonix 2.x from upstream v2.61.0.** Upstream was archived on 2026-11-12; this line keeps the Electron desktop and the existing feature set, and continues development with the upstream version sequence. It is not an official release.
+> **本仓库是 Reasonix 2.x 的接续线。** 以上游最终版 v2.61.0 为基线继续独立开发：保留 Electron 桌面与既有功能，版本号沿用上游序列。上游已于 2026-11-12 归档；本仓库不是官方发行版。
 
-> Reasonix has two independent lines derived from upstream: this repository (Studio, 2.x continuation, Electron, full-featured) · [Reasonix Wails](https://github.com/keeyangyy/reasonix-wails) (1.x derivative, portable single exe and installer).
+> Reasonix 有两条基于上游衍生的独立接续线：本仓库（Studio，2.x 接续，Electron，功能全面） · [Reasonix Wails](https://github.com/keeyangyy/reasonix-wails)（1.x 衍生，便携单 exe 与安装版）。
 
 <p align="center">
-  <strong>English</strong>
+  <a href="./README.en.md">English</a>
   &nbsp;·&nbsp;
-  <a href="./README.zh-CN.md">简体中文</a>
+  <strong>简体中文</strong>
   &nbsp;·&nbsp;
-  <a href="./docs/GUIDE.md">Guide</a>
+  <a href="./docs/GUIDE.zh-CN.md">指南</a>
   &nbsp;·&nbsp;
   <a href="./docs/ACP.md">ACP</a>
   &nbsp;·&nbsp;
-  <a href="./docs/EXTENSIONS.md">Extensions</a>
+  <a href="./docs/EXTENSIONS.md">扩展开发</a>
   &nbsp;·&nbsp;
-  <a href="./docs/SPEC.md">Spec</a>
+  <a href="./docs/SPEC.md">规格</a>
   &nbsp;·&nbsp;
-  <a href="https://esengine.github.io/DeepSeek-Reasonix/">Website</a>
+  <a href="https://esengine.github.io/DeepSeek-Reasonix/">官方网站</a>
 </p>
 
 <p align="center">
@@ -40,148 +40,132 @@
 
 <br/>
 
-<p align="center"><strong>Open source · MIT · runs on your computer, model of your choice</strong></p>
-<h3 align="center">An open-source coding agent for your terminal, desktop, browser and editor.</h3>
-<p align="center">It reads your project, edits files and runs commands and tests. Have it ask before each step, or work on its own within limits you set. Files its edit tools changed can be rewound. New here? Start with the Studio desktop app.</p>
-<p align="center">Upstream created and maintained by <strong>Huahui Yu</strong>; this continuation line is maintained by <strong>keeyangyy</strong>.</p>
+<p align="center"><strong>开源 · MIT · 程序跑在你电脑上，模型自选</strong></p>
+<h3 align="center">终端、桌面、浏览器、编辑器里都能用的 AI 编程助手。</h3>
+<p align="center">它会读你的项目、改文件、跑命令和测试。每一步先问你，或在你划定的范围内自己做，由你选；它用编辑工具改过的文件可以退回去。第一次用，从桌面应用 Studio 开始。</p>
+<p align="center">上游由 <strong>Huahui Yu</strong> 创建并维护；本接续线由 <strong>keeyangyy</strong> 维护。</p>
 
-<br/>
+## 它是什么
 
-## What it is
+Reasonix 是一个开源的 AI 编程助手。程序跑在你的电脑上；AI 模型是你自己配置的服务，它读到的内容会发给这个服务。你用大白话描述任务，它在你选的项目文件夹里读代码、改文件、跑命令和测试，每一步都摆给你看。
 
-Reasonix is an open-source AI coding assistant. The program runs on your computer; the AI model is a service you configure, which receives what it reads. You describe a task in plain language; it reads code, edits files and runs commands and tests inside the project folder you choose, and shows you each step.
+模型你自己选：内置 DeepSeek 预设，其他兼容 OpenAI 接口的服务填一条配置就行，费用直接付给模型服务商。
 
-You pick the model: a DeepSeek preset is built in, any OpenAI-compatible service is one config entry, and you pay the model provider directly.
+## 你能得到什么
 
-## What you get
+- **读、改、跑**：读你的项目、改文件、跑测试和命令，都在你选的项目文件夹里。
+- **权限分档**：每次都问你，或让日常操作自动放行；你设的禁止规则始终有效。想先看方案，就开计划模式，批准后它才动手。
+- **可回退**：改文件前先存快照，按对话轮次回退，不碰 git 历史。只覆盖编辑工具改的文件，命令行命令造成的改动不在内。
 
-- **Read, edit, run.** It reads code, edits files and runs tests and commands, all inside your project folder.
-- **Permission levels.** Have it ask every time, or let everyday actions run on their own; your forbid rules always hold. To see the approach first, use plan mode: it starts work only once you approve.
-- **Rewind.** A file is saved before it changes, so you can rewind by conversation turn without touching your git history. Only files its edit tools changed are covered, not what a shell command did.
+## 30 秒上手
 
-## 30-second start
+下载、填模型密钥、打开项目。第一次用，从桌面应用 Studio 开始。
 
-Download, add a model key, open a project. New here? Start with the Studio desktop app.
+1. 从[发布页](https://github.com/esengine/DeepSeek-Reasonix/releases?q=studio-v&expanded=true)下载并安装桌面应用 Reasonix Studio。
+2. 打开应用，按提示填入模型服务商和密钥。
+3. 打开你的项目文件夹，写下想做的事，例如“给 http 客户端加上失败重试”。
+4. 按你选的档位，该问你的操作它会先停下来问；同意就继续，不同意就拒绝。
 
-1. Download and install the desktop app, Reasonix Studio, from the [releases page](https://github.com/esengine/DeepSeek-Reasonix/releases?q=studio-v&expanded=true).
-2. Open it and enter your model provider and key when asked.
-3. Open your project folder and write what you want, for example "add retry on failure to the http client".
-4. At the level you chose, it stops and asks before anything that needs your say-so. Allow it to continue, or refuse.
+更喜欢终端的话，下载 `reasonix` 命令行后运行 `reasonix setup` 配好模型，再运行 `reasonix` 即可。详见[安装](#安装)和[快速开始](#快速开始)。
 
-Prefer a terminal? Download the `reasonix` command-line tool, run `reasonix setup` to pick a model, then run `reasonix`. See [Install](#install) and [Quick start](#quick-start).
+## 四种用法
 
-## Four ways to use it
+- **桌面应用（Studio）**：图形界面，适合第一次使用。
+- **终端**：全屏文字界面，也能用 `reasonix run "任务"` 在脚本里运行。
+- **浏览器**：`reasonix web` 在本机打开网页界面。
+- **编辑器**：VS Code 安装扩展即可；其他支持 ACP（Agent Client Protocol，编辑器接入某个 AI 助手的通用约定）的编辑器，可连接 `reasonix acp`。
 
-- **Desktop app (Studio).** A graphical app; the best place to start.
-- **Terminal.** A full-screen text interface; `reasonix run "task"` also works in scripts.
-- **Browser.** `reasonix web` opens a web interface on your own machine.
-- **Editor.** Install the extension in VS Code; other editors that support ACP (Agent Client Protocol, a common way for an editor to connect to an AI assistant) can connect to `reasonix acp`.
+四种用法背后是同一套程序。下面的内容写给进阶用户和贡献者。
 
-All four are the same program underneath. What follows is for advanced users and contributors.
+## 在 DeepSeek Harness 里使用
 
-## Use it from DeepSeek Harness
+DeepSeek Harness（`dsh`）可以通过 ACP 把任务交给 Reasonix 作为子智能体去做。本仓库为此发布了一个插件索引：
 
-DeepSeek Harness (`dsh`) can hand a task to Reasonix as a subagent over ACP. This repository publishes a plugin index for it:
+1. 在运行 `dsh` 的机器上先运行 `reasonix setup`。在 DSH 网页界面打开“自定义插件市场”（插件，更多），再到 Discover 页添加这个索引：`https://raw.githubusercontent.com/esengine/DeepSeek-Reasonix/studio/integrations/dsh-plugin/market-index.json`
+2. 从中安装“Reasonix subagent”。
+3. 打开这个插件的页面，把它的开关打开。关着的时候模型没有 `reasonix` 工具，可能改在自己的 shell 里直接运行 `reasonix -p`，看起来像委派，其实不是。
 
-1. Run `reasonix setup` on the machine that runs `dsh`. In the DSH Web UI turn on Custom plugin markets (Plugins, More) and add this index in the Discover tab: `https://raw.githubusercontent.com/esengine/DeepSeek-Reasonix/studio/integrations/dsh-plugin/market-index.json`
-2. Install "Reasonix subagent" from it.
-3. Open the plugin's page and turn its switch on. While it is off the model has no `reasonix` tool and may run `reasonix -p` in its own shell, which looks like a delegation and is not one.
+配置细节、权限策略和限制见 [在 DeepSeek Harness 中使用 Reasonix](./docs/DSH.md)。
 
-Setup details, the permission policy and limits are in [Using Reasonix from DeepSeek Harness](./docs/DSH.md).
+## 版本
 
-## Versions
+Reasonix 分为两条版本线，调整的原因见[版本路线公告](https://github.com/esengine/DeepSeek-Reasonix/discussions/10748)。
 
-Reasonix ships on two lines. See the [version roadmap announcement](https://github.com/esengine/DeepSeek-Reasonix/discussions/10748) for the reasoning behind the split.
-
-| Line | Branch | Status | Get it |
+| 版本线 | 分支 | 状态 | 获取方式 |
 | --- | --- | --- | --- |
-| **Reasonix 2.x** | `studio` (this branch) | Active development | [Studio releases](https://github.com/esengine/DeepSeek-Reasonix/releases?q=studio-v&expanded=true) |
-| **Reasonix 1.x** | [`main-v2`](https://github.com/esengine/DeepSeek-Reasonix/tree/main-v2) | Maintenance / stable | `npm i -g reasonix` · [desktop download](https://reasonix.io/?download=desktop#start) |
+| **Reasonix 2.x** | `studio`（当前分支） | 活跃开发 | [Studio 发布页](https://github.com/esengine/DeepSeek-Reasonix/releases?q=studio-v&expanded=true) |
+| **Reasonix 1.x** | [`main-v2`](https://github.com/esengine/DeepSeek-Reasonix/tree/main-v2) | 维护 / 稳定 | `npm i -g reasonix` · [桌面端下载](https://reasonix.io/?download=desktop#start) |
 
-- **Want something stable?** Stay on 1.x. It keeps receiving bug fixes,
-  provider/API compatibility, updater and security fixes; its core architecture
-  is no longer being extended.
-- **Want the new architecture?** Use 2.x Reasonix Studio. It is still moving
-  quickly; reports are welcome.
+- **想要稳定**：继续使用 1.x。它会持续收到 Bug 修复、Provider / API 兼容、
+  更新器和安全修复，但不再扩展核心架构。
+- **想体验新架构**：使用 2.x Reasonix Studio。它仍在快速迭代，欢迎反馈问题。
 
-Valuable fixes, tests and behaviour from 1.x are reviewed one by one and ported
-or reimplemented on 2.x where they fit the new architecture.
+1.x 中有价值的修复、测试和行为会逐项 review，适合新架构的会迁移或重新实现到 2.x。
 
-- [Moving from 1.x to 2.x](./docs/MIGRATING.md): what the two lines share, and
-  how to run both on one machine without losing sessions.
-- [2.x roadmap](./docs/ROADMAP.md): what 2.x still has to deliver, how it ships,
-  and the decisions still open.
+- [从 1.x 迁移到 2.x](./docs/MIGRATING.md)（英文）：两条线共用哪些数据，以及如何在同一台
+  机器上同时使用而不丢会话。
+- [2.x 路线图](./docs/ROADMAP.md)（英文）：2.x 还要交付什么、如何发布、哪些决定尚未做出。
 
-## Features
+## 特性
 
-Technical highlights for advanced users.
+以下是写给进阶用户的技术要点。
 
-- **Config-driven.** Providers, the agent, enabled tools, and plugins are all
-  declared in `reasonix.toml`. No hardcoded models.
-- **Multi-model & composable.** DeepSeek ships as a preset; any
-  OpenAI-compatible endpoint is a config entry, not new code. Optionally run
-  two models together (executor + planner) in separate, cache-stable sessions.
-- **Plugin-driven.** MCP servers contribute tools, prompts, and resources;
-  Extension Protocol v1 sidecars can also intercept runtime events, contribute
-  Providers and structured UI, and ship versioned plugin packages.
-- **Cache-aware context maintenance.** Startup injects a small stable environment
-  summary, stale tool output is snipped/pruned before summary compaction, and the
-  built-in tool schema contract is documented for regression review.
-- **Zero-friction distribution.** `CGO_ENABLED=0` single binary; cross-compile
-  to six targets with one command. The result is a fully self-contained static
-  binary — nothing to install on the target machine beyond the binary itself.
+- **配置驱动**：provider、agent、启用的工具、插件全部在 `reasonix.toml` 中声明，
+  内核无硬编码模型。
+- **多模型 · 可组合**：DeepSeek 作为预设内置；任何 OpenAI 兼容
+  端点都只是一条配置。可选让两个模型协同（执行器 + 规划器），各自独立、缓存稳定的 session。
+- **插件驱动**：MCP server 提供工具、提示词和资源；Extension Protocol v1
+  Sidecar 还可以拦截运行时事件、提供 Provider 与结构化 UI，并通过版本化插件包分发。
+- **缓存友好的上下文维护**：启动时注入稳定的环境摘要；旧工具输出会先 snip/prune，
+  再进入摘要 compaction；内置工具 schema 合约有文档和回归测试保护。
+- **零摩擦分发**：`CGO_ENABLED=0` 单二进制；一条命令交叉编译到六个目标平台。
+  产物是完全自包含的静态二进制——目标机器上除二进制本身外无需安装任何东西。
 
-## Install
+## 安装
 
-This branch is **Reasonix 2.x**. Its desktop app is Reasonix Studio; the CLI,
-Studio, and editor integrations all run the same local Reasonix engine.
+当前分支是 **Reasonix 2.x**，桌面端是 Reasonix Studio；CLI、Studio 和编辑器集成
+都运行同一套本地 Reasonix 引擎。
 
-### Reasonix Studio (2.x)
+### Reasonix Studio（2.x）
 
-Download the package for your platform from the latest
-[Studio release](https://github.com/esengine/DeepSeek-Reasonix/releases?q=studio-v&expanded=true)
-(tagged `studio-v2.*`; candidates such as `-rc.N` are marked as
-pre-releases):
+从最新的 [Studio 发布](https://github.com/esengine/DeepSeek-Reasonix/releases?q=studio-v&expanded=true)
+下载对应平台的安装包（标签为 `studio-v2.*`；`-rc.N` 等候选版本标为预发布）：
 
-| Platform | Package | Architecture |
+| 平台 | 安装包 | 架构 |
 | --- | --- | --- |
-| macOS | `.dmg` or `.zip` | Apple Silicon (`arm64`) / Intel (`amd64`) |
-| Windows | Installer `-installer.exe` or portable `.zip` | x64 |
-| Linux | `.deb`, `.rpm`, or `.AppImage` (download only) | x64 (`amd64`) / ARM64 (`arm64`, aarch64) |
+| macOS | `.dmg` 或 `.zip` | Apple Silicon（`arm64`）/ Intel（`amd64`） |
+| Windows | 安装器 `-installer.exe` 或便携 `.zip` | x64 |
+| Linux | `.deb`、`.rpm` 或 `.AppImage`（只提供下载） | x64（`amd64`）/ ARM64（`arm64`，aarch64） |
 
-Every package ships with a `.minisig` signature, and the release carries
-`SHA256SUMS`. Once installed, Studio updates itself in place.
+每个安装包都附带 `.minisig` 签名，发布页另有 `SHA256SUMS`。安装后 Studio 会在
+应用内自行更新。
 
-The same release also carries the 2.x `reasonix` CLI as archives for
-`darwin|linux|windows × amd64|arm64`.
+同一个发布页也提供 2.x 的 `reasonix` CLI 归档（`darwin|linux|windows × amd64|arm64`）。
 
-### Reasonix 1.x (stable)
+### Reasonix 1.x（稳定版）
 
-The 1.x CLI installs through npm on any supported platform, or Homebrew on
-macOS:
+1.x CLI 在任意支持的平台上都可以通过 npm 安装，macOS 也可以使用 Homebrew：
 
 ```sh
-npm i -g reasonix                  # any OS; pulls the prebuilt native binary
+npm i -g reasonix                  # 任意系统;自动拉取对应平台的原生二进制
 brew install esengine/reasonix/reasonix   # macOS
 ```
 
-The 1.x desktop app is on the
-[official download page](https://reasonix.io/?download=desktop#start). Windows
-installers are code-signed with a Certum code-signing certificate.
+1.x 桌面端请前往[官方下载页](https://reasonix.io/?download=desktop#start)。
+Windows 安装器使用 Certum 代码签名证书签名。
 
-### VS Code extension
+### VS Code 扩展
 
-The extension does not bundle the CLI; it starts your local `reasonix acp`
-backend and adds native chat, editor context, tool-call approvals, model
-selection, and workspace sessions. Install the 1.x CLI first.
+扩展不内置 CLI，而是启动本机的 `reasonix acp` 后端，并提供原生聊天、编辑器
+上下文、工具调用审批、模型选择和工作区会话。请先安装 1.x CLI。
 
-- **VS Code:** [install from Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SivanLiu.reasonix-agent)
-- **VSCodium / Eclipse Theia:** [install from Open VSX Registry](https://open-vsx.org/extension/SivanLiu/reasonix-agent)
-- **Extension ID:** `SivanLiu.reasonix-agent` · [source and usage guide](https://github.com/SivanCola/reasonix-vscode)
+- **VS Code：** [从 Visual Studio Marketplace 安装](https://marketplace.visualstudio.com/items?itemName=SivanLiu.reasonix-agent)
+- **VSCodium / Eclipse Theia：** [从 Open VSX Registry 安装](https://open-vsx.org/extension/SivanLiu/reasonix-agent)
+- **扩展 ID：** `SivanLiu.reasonix-agent` · [源码与使用说明](https://github.com/SivanCola/reasonix-vscode)
 
-### Build from source
+### 从源码构建
 
-Clone the repository; `studio` builds 2.x and `main-v2` builds 1.x:
+克隆仓库；`studio` 构建 2.x，`main-v2` 构建 1.x：
 
 ```sh
 git clone https://github.com/esengine/DeepSeek-Reasonix.git
@@ -191,69 +175,66 @@ git switch studio
 
 #### CLI
 
-The CLI build requires **Go 1.25+**. The module pins a `toolchain` directive;
-keep `GOTOOLCHAIN=auto` so Go downloads the pinned toolchain, or install it.
+CLI 构建需要 **Go 1.25+**。模块固定了 `toolchain`，保持 `GOTOOLCHAIN=auto`
+即可让 Go 自动下载对应工具链，也可以手动安装。
 
 ```sh
 make build      # -> bin/reasonix(.exe)
-make cross      # -> dist/ (darwin|linux|windows × amd64|arm64)
+make cross      # -> dist/（darwin|linux|windows × amd64|arm64）
 ```
 
 #### Studio
 
-Studio additionally requires **Node 24+ and pnpm 10**
-(`npm install -g pnpm@10`) for the frontend.
+Studio 的前端还需要 **Node 24+ 与 pnpm 10**（`npm install -g pnpm@10`）。
 
 ```sh
 make studio
 ```
 
-See the [Studio build guide](desktop/README.md#prerequisites) for platform
-webview dependencies and Linux build tags.
+各平台的 webview 依赖和 Linux 构建标签见 [Studio 构建指南](desktop/README.md#prerequisites)。
 
-## Quick start
+## 快速开始
 
 ### Reasonix Studio
 
-Install and launch Studio, then connect a provider and model in the app. No CLI
-setup is needed.
+安装并启动 Studio，然后在应用内连接 provider 和模型即可使用，无需配置 CLI。
 
 ### CLI / TUI
 
 ```sh
-reasonix setup                      # configure a provider and model
-reasonix                            # start an interactive session
-reasonix run "implement the TODOs in main.go"
+reasonix setup                      # 配置 provider 和模型
+reasonix                            # 启动交互式会话
+reasonix run "把 main.go 里的 TODO 实现掉"
 ```
 
-In an interactive session, run `/init` when you want Reasonix to create project
-instructions.
+需要项目指令时，可在交互式会话中运行 `/init`。
 
-For advanced CLI usage and configuration, see the **[CLI reference](./docs/CLI.md)**,
-**[Guide](./docs/GUIDE.md)**, and
-**[configuration paths](./docs/CONFIG_PATHS.md)**.
+CLI 进阶用法和详细配置见 **[CLI 命令参考](./docs/CLI.zh-CN.md)**、
+**[指南](./docs/GUIDE.zh-CN.md)** 和
+**[配置路径](./docs/CONFIG_PATHS.md)**。
 
-## Documentation
+## 文档
 
-- **Getting started:** [Guide](./docs/GUIDE.md) · [CLI reference](./docs/CLI.md) ·
-  [Configuration paths](./docs/CONFIG_PATHS.md) · [ACP editor integration](./docs/ACP.md) ·
-  [Use from DeepSeek Harness](./docs/DSH.md)
-- **Features & troubleshooting:** [Subagent profiles](./docs/SUBAGENT_PROFILES.md) ·
+- **开始使用：** [指南](./docs/GUIDE.zh-CN.md) ·
+  [CLI 命令参考](./docs/CLI.zh-CN.md) · [配置路径](./docs/CONFIG_PATHS.md) ·
+  [ACP 编辑器接入](./docs/ACP.md) · [在 DeepSeek Harness 中使用](./docs/DSH.md)
+- **功能与排障：** [子智能体 Profile](./docs/SUBAGENT_PROFILES.md) ·
   [Context Engine v2](./docs/SESSION_MEMORY_RETRIEVAL.md) ·
-  [Capability diagnostics](./docs/CAPABILITY_DIAGNOSTICS.md) ·
-  [Recovery and updates](./docs/RECOVERY.md) ·
-  [Checkpoints & rewind](./docs/CHECKPOINTS.md)
-- **Agent presets:** [Session Agent compositions](./docs/AGENT_COMPOSITIONS.md)
-- **Engineering & migration:** [Spec](./docs/SPEC.md) ·
-  [Task contracts & pause policy](./docs/TASK_CONTRACT.md) ·
-  [Tool contract](./docs/TOOL_CONTRACT.md) · [Moving from 1.x to 2.x](./docs/MIGRATING.md) ·
-  [2.x roadmap](./docs/ROADMAP.md)
-- **Extension development:** [Skills](./docs/SKILLS.md) · [Extensions](./docs/EXTENSIONS.md) ·
-  [Plugin packages and Manifest v1](./docs/PLUGIN_PACKAGES.md) ·
+  [能力诊断](./docs/CAPABILITY_DIAGNOSTICS.md) ·
+  [恢复与安全模式](./docs/RECOVERY.md) ·
+  [Checkpoints 与 rewind](./docs/CHECKPOINTS.md)
+- **Agent 预设：** [会话级组合](./docs/AGENT_COMPOSITIONS.zh.md)
+- **工程与迁移：** [规格](./docs/SPEC.md) ·
+  [任务合约与暂停策略](./docs/TASK_CONTRACT.md) ·
+  [工具合约](./docs/TOOL_CONTRACT.md) ·
+  [从 1.x 迁移到 2.x](./docs/MIGRATING.md) ·
+  [2.x 路线图](./docs/ROADMAP.md)
+- **扩展开发：** [扩展概览](./docs/EXTENSIONS.md) ·
+  [插件包与 Manifest v1](./docs/PLUGIN_PACKAGES.md) ·
   [Extension Protocol](./docs/EXTENSION_PROTOCOL.md) ·
-  [Go SDK and starter](./sdk/go/README.md)
+  [Go SDK 与 starter](./sdk/go/README.md)
 
-## Star History
+## Star 趋势
 
 <a href="https://www.star-history.com/?repos=esengine%2FDeepSeek-Reasonix&type=date&legend=top-left">
  <picture>
@@ -265,11 +246,11 @@ For advanced CLI usage and configuration, see the **[CLI reference](./docs/CLI.m
 
 <br/>
 
-## Acknowledgments
+## 致谢
 
-A small list of folks whose work has shaped Reasonix the most — the current top
-20 contributors by commit count. The full contributor graph is on
-[GitHub](https://github.com/esengine/DeepSeek-Reasonix/graphs/contributors?all=1).
+下面这些朋友的工作塑造了 Reasonix 今天的样子 —— 当前按 commit 数统计的前 20 名贡献者。
+完整贡献者列表在
+[GitHub](https://github.com/esengine/DeepSeek-Reasonix/graphs/contributors?all=1)。
 
 <!-- reasonix-top-contributors:start -->
 | Contributor | Contributor | Contributor | Contributor |
@@ -281,11 +262,11 @@ A small list of folks whose work has shaped Reasonix the most — the current to
 | [**par73e**](https://github.com/par73e) | [**Bernardxu123**](https://github.com/Bernardxu123) | [**lancy69**](https://github.com/lancy69) | [**Guan0923**](https://github.com/Guan0923) |
 <!-- reasonix-top-contributors:end -->
 
-Special thanks to [**Bernardxu123**](https://github.com/Bernardxu123) for designing the project logo and intro video.
+特别感谢 [**Bernardxu123**](https://github.com/Bernardxu123) 设计的项目 logo和开场视频。
 
 <p align="center">
   <a href="https://github.com/esengine/DeepSeek-Reasonix/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=esengine/DeepSeek-Reasonix&max=100&columns=12" alt="Contributors to esengine/DeepSeek-Reasonix" width="860"/>
+    <img src="https://contrib.rocks/image?repo=esengine/DeepSeek-Reasonix&max=100&columns=12" alt="esengine/DeepSeek-Reasonix 贡献者" width="860"/>
   </a>
 </p>
 
@@ -294,7 +275,7 @@ Special thanks to [**Bernardxu123**](https://github.com/Bernardxu123) for design
 ---
 
 <p align="center">
-  <sub>MIT — see <a href="./LICENSE">LICENSE</a></sub>
+  <sub>MIT —— 见 <a href="./LICENSE">LICENSE</a></sub>
   <br/>
-  <sub>Built by the community at <a href="https://github.com/esengine/DeepSeek-Reasonix/graphs/contributors">esengine/DeepSeek-Reasonix</a></sub>
+  <sub>由 <a href="https://github.com/esengine/DeepSeek-Reasonix/graphs/contributors">esengine/DeepSeek-Reasonix</a> 社区共建</sub>
 </p>
